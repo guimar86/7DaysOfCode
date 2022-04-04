@@ -1,5 +1,7 @@
 package com.alura.sevendays.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Top250DataDetail
 {
     private String Id ;
@@ -9,7 +11,9 @@ public class Top250DataDetail
     private String Year ;
     private String Image ;
     private String Crew ;
-    private String IMDbRating ;
+    @JsonProperty("imDbRating")
+    private String imDbRating ;
+    @JsonProperty("imDbRatingCount")
     private String IMDbRatingCount ;
 
     public String getId() {
@@ -69,11 +73,11 @@ public class Top250DataDetail
     }
 
     public String getIMDbRating() {
-        return IMDbRating;
+        return imDbRating;
     }
 
     public void setIMDbRating(String IMDbRating) {
-        this.IMDbRating = IMDbRating;
+        this.imDbRating = IMDbRating;
     }
 
     public String getIMDbRatingCount() {
